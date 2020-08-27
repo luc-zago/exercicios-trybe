@@ -23,24 +23,25 @@
         .stomatopoda { font-size: 200px;
             background-color: black;
             border-radius: 25%; }
-        a { background-color:tomato; }
-        table { border: silver solid;
-            font-family: monospace;
+        a { color:tomato; }
+        table { font-family: monospace;
             font-size: 20px;
             margin: auto; }
+        th { border: silver solid; }
+        td { border: silver solid; }
     </style>
 
 </head>
 <body>
-    <header><span class="titulo1">Soco a 80km/h:</span> <span class="titulo-meio">Conheça o </span><span class="stomatopoda"><b>Stomatopoda</b></span></header>
+    <header id="apresentação"><span class="titulo1">Soco a 80km/h:</span> <span class="titulo-meio">Conheça o </span><span class="stomatopoda"><b>Stomatopoda</b></span></header>
     <nav>
         <ul>
-            <li><a>Página inicial</a></li>
-            <li><a>Sobre</a></li>
-            <li><a>Contato</a></li>
+            <li><a href=#apresentação>Página inicial</a></li>
+            <li><a href=#fatos-stomatopoda>Sobre</a></li>
+            <li><a href=#contato>Contato</a></li>
         </ul>
         </nav>
-    <article>
+    <article id="fatos-stomatopoda">
         <h2>Fatos sobre o Stomatopoda</h2>
         <section>
             <h3>Informações gerais</h3>
@@ -116,5 +117,5 @@
             <p>Caso tenha curiosidade, assista a um <a target="_blank" href="https://www.youtube.com/watch?v=E0Li1k5hGBE">vídeo</a> do Stomatopoda em ação</p>
         </aside>
     </article>
-    <footer>Compilado por Lucas Zago de Oliveira</footer>
+    <footer id="contato">Compilado por Lucas Zago de Oliveira</footer>
 </body>
