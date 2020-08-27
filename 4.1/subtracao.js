@@ -1,4 +1,4 @@
-//soma as duas variáveis
+//subtrai as duas variáveis
 let a = 5
 let b = 3
 
