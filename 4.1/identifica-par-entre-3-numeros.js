@@ -1,4 +1,4 @@
-//Recebe três números em uma variável e identifica se existe um par entre eles
+//Recebe três números em três variáveis e identifica se existe um número par entre eles
 
 let numero1 = 3
 let numero2 = 0
