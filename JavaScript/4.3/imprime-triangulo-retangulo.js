@@ -1,4 +1,4 @@
-//Dado um número 'n', imprime um quadrado
+//Dado um número 'n', imprime um triângulo retângulo
 
 let n = 5
 let lista = []
