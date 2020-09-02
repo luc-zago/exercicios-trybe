@@ -24,3 +24,14 @@ for (let key in info) {
 for (let value in info) {
     console.log(info[value]);
 } */
+
+for (let x in (info && info_patinhas)) {
+    
+    if (info[x] === info_patinhas[x]) {
+        console.log('Ambos recorrentes')
+    }
+    
+    else {
+        console.log(info[x] + ' e ' + info_patinhas[x])
+    }
+}
