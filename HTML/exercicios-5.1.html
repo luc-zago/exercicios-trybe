@@ -81,8 +81,20 @@
           return mudaCorParaBranco.style.backgroundColor = "white";
         }
 
+        
+        // 4. Crie uma função que corrija o texto da tag <h1>.
+        */
+
+        let textoCorreto = document.getElementsByTagName("h1")[0];
+        textoCorreto.textContent = "Exercício 5.1 - JavaScript";
+        
         /*
-        4. Crie uma função que corrija o texto da tag <h1>.
+        function textoCorreto(textoCorreto) {
+          let textoCorreto = document.getElementsByTagName("p")[0];
+          return textoCorreto.textContent = "Exercício 5.1 - JavaScript";
+        }
+
+        /*
         5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
         6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
