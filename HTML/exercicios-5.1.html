@@ -48,7 +48,7 @@
         */
 
         let texto = document.getElementsByTagName("p")[0];
-          texto.textContent = "Daqui há 2 anos, estarei trabalhando na área de tecnologia";
+        texto.textContent = "Daqui há 2 anos, estarei trabalhando na área de tecnologia";
         
         /*
         function texto(texto) {
@@ -60,7 +60,7 @@
         //2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
 
         let mudaCorParaVerde = document.getElementsByClassName("main-content")[0];
-          mudaCorParaVerde.style.backgroundColor = "rgb(76,164,109)";
+        mudaCorParaVerde.style.backgroundColor = "rgb(76,164,109)";
         
         /*
 
@@ -94,10 +94,37 @@
           return textoCorreto.textContent = "Exercício 5.1 - JavaScript";
         }
 
-        /*
-        5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
-        6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        // 5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
         */
+        
+        let seletor1 = document.getElementsByTagName("p")[0].innerText;
+        let seletor2 = document.getElementsByTagName("p")[2].innerText;
+        seletor1.textContent = seletor1.toLocaleUpperCase();
+        let maiuscula1 = seletor1.toUpperCase();
+        let maiuscula2 = seletor2.toUpperCase();
+
+        /*
+        // 6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+        */
+
+        let conteudoTotal = {
+          conteudoTag0: document.getElementsByTagName("p")[0].innerText,
+          conteudoTag1: document.getElementsByTagName("p")[1].innerText,
+          conteudoTag2: document.getElementsByTagName("p")[2].innerText
+        }
+
+        console.log(conteudoTotal.conteudoTag0 + conteudoTotal.conteudoTag1 + conteudoTotal.conteudoTag2)
+        
+        /*
+        function imprimeConteudoTagP() {
+          let conteudoTotal = {
+          conteudoTag0: document.getElementsByTagName("p")[0].innerText,
+          conteudoTag1: document.getElementsByTagName("p")[1].innerText,
+          conteudoTag2: document.getElementsByTagName("p")[2].innerText
+          }
+          return console.log(conteudoTotal.conteudoTag0 + conteudoTotal.conteudoTag1 + conteudoTotal.conteudoTag2)
+        } */
+
     </script>
   </body>
 </html>
