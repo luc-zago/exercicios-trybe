@@ -43,79 +43,47 @@
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
         - document.getElementsByClassName()
-        - document.getElementsByTagName()
-        1. Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
-        */
-
-        let texto = document.getElementsByTagName("p")[0];
-        texto.textContent = "Daqui há 2 anos, estarei trabalhando na área de tecnologia";
+        - document.getElementsByTagName() */
+        // 1. Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
         
-        /*
         function texto(texto) {
           let texto = document.getElementsByTagName("p")[0];
           return texto.textContent = "Daqui há 2 anos, estarei trabalhando na área de tecnologia";
         }
-        */
 
-        //2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
-
-        let mudaCorParaVerde = document.getElementsByClassName("main-content")[0];
-        mudaCorParaVerde.style.backgroundColor = "rgb(76,164,109)";
-        
-        /*
+        // 2. Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
 
         function mudaCorParaVerde(mudaCorParaVerde) {
           let mudaCorParaVerde = document.getElementsByClassName("main-content")[0];
           return mudaCorParaVerde.style.backgroundColor = "rgb(76,164,109)";
         }
 
-        */
         // 3. Crie uma função que mude a cor do quadrado vermelho para branco.
-        
-        let mudaCorParaBranco = document.getElementsByClassName("center-content")[0];
-        mudaCorParaBranco.style.backgroundColor = "white";
 
-        /*
         function mudaCorParaBranco(mudaCorParaBranco) {
           let mudaCorParaBranco = document.getElementsByClassName("main-content")[0];
           return mudaCorParaBranco.style.backgroundColor = "white";
         }
-
         
         // 4. Crie uma função que corrija o texto da tag <h1>.
-        */
-
-        let textoCorreto = document.getElementsByTagName("h1")[0];
-        textoCorreto.textContent = "Exercício 5.1 - JavaScript";
         
-        /*
         function textoCorreto(textoCorreto) {
           let textoCorreto = document.getElementsByTagName("p")[0];
           return textoCorreto.textContent = "Exercício 5.1 - JavaScript";
         }
 
         // 5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
-        */
         
+        function maiuscula(maiuscula1, maiuscula2) {
         let seletor1 = document.getElementsByTagName("p")[0].innerText;
         let seletor2 = document.getElementsByTagName("p")[2].innerText;
-        seletor1.textContent = seletor1.toLocaleUpperCase();
         let maiuscula1 = seletor1.toUpperCase();
         let maiuscula2 = seletor2.toUpperCase();
-
-        /*
-        // 6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-        */
-
-        let conteudoTotal = {
-          conteudoTag0: document.getElementsByTagName("p")[0].innerText,
-          conteudoTag1: document.getElementsByTagName("p")[1].innerText,
-          conteudoTag2: document.getElementsByTagName("p")[2].innerText
+        return document.getElementsByTagName("p")[0].innerText = maiuscula1, document.getElementsByTagName("p")[2].innerText = maiuscula2;
         }
 
-        console.log(conteudoTotal.conteudoTag0 + conteudoTotal.conteudoTag1 + conteudoTotal.conteudoTag2)
-        
-        /*
+        // 6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+
         function imprimeConteudoTagP() {
           let conteudoTotal = {
           conteudoTag0: document.getElementsByTagName("p")[0].innerText,
@@ -123,7 +91,7 @@
           conteudoTag2: document.getElementsByTagName("p")[2].innerText
           }
           return console.log(conteudoTotal.conteudoTag0 + conteudoTotal.conteudoTag1 + conteudoTotal.conteudoTag2)
-        } */
+        }
 
     </script>
   </body>
