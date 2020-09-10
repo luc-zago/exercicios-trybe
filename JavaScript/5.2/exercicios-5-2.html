@@ -67,6 +67,12 @@
 
       document.getElementsByTagName('div')[0].appendChild(document.createElement('div'));
       document.getElementsByTagName('div')[1].className = 'center-content';
+
+      document.getElementsByTagName('div')[1].appendChild(document.createElement('p'));
+      document.getElementsByTagName('p')[0].innerText = 'Algum texto';
+
+      document.getElementsByTagName('div')[0].appendChild(document.createElement('div'));
+      document.getElementsByTagName('div')[2].className = 'left-content';
     </script>
   </body>
 </html>
