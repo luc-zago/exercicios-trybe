@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Leitor de texto</title>
+        <style>
+            body {text-align: justify;
+                margin-bottom: 80px;}
+            h1, h2 {text-align: center;}
+            p, h3 {margin-left: 30px;
+                margin-right: 30px;}
+            button {padding: 4px;}
+        </style>
+    </head>
+    <body>
+        <h1>Site destinado à leitura de textos</h1>
+        <h3>Escolha abaixo as suas configurações</h3>
+        <p>Cor de fundo:<input type="text"><button id="bg-color">Alterar</button></p>
+        <p>Cor do texto:<input type="text"><button id="txt-color">Alterar</button></p>
+        <p>Tamanho da fonte:<input type="text"><button id="font-size">Alterar</button></p>
+        <p>Espaçamento entre linhas:<input type="text"><button id="line-height">Alterar</button></p>
+        <p>Fonte:<input type="text"><button id="font">Alterar</button></p>
+        <h2>Era uma vez...</h2>
+        <p>Um garoto que tinha um sonho. Esse sonho se repetia toda noite. E o mais engraçado é que esse sonho era em latim, mesmo sem ele saber falar latim. Nas palavras do garoto:</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam molestie bibendum urna, in molestie tellus elementum ac. Vivamus cursus, massa a suscipit consectetur, ante leo sollicitudin massa, sit amet tempus elit augue eget metus. Aenean cursus a mauris a ullamcorper. Quisque et justo laoreet, vulputate velit vitae, suscipit nunc. Nunc eget ultrices mauris. Aliquam ac magna quis mi porta consectetur. Nam id sapien quis leo varius sodales. Nam sit amet nisi in libero tincidunt aliquam sed et neque. Sed nisl justo, finibus eget viverra et, sagittis sit amet nulla. Nulla et lacus consequat, dictum ante nec, scelerisque purus. Integer volutpat dictum metus, non egestas augue lacinia eu. Ut iaculis tempus nibh lobortis imperdiet.</p>
+        <p>Suspendisse molestie vel ex eu ullamcorper. Sed in urna orci. Aliquam urna enim, accumsan blandit eros quis, volutpat vehicula dui. Aliquam vehicula, mi ut vehicula porttitor, lorem magna auctor velit, id rhoncus dui lectus in augue. Nunc eros odio, interdum et tincidunt nec, tempor quis elit. Morbi molestie lectus at lobortis fringilla. Aenean justo orci, vulputate mollis sodales vitae, blandit eget orci.</p>
+        <p>Cras ipsum lorem, aliquam eu ante a, pharetra rutrum neque. Donec volutpat elementum pharetra. Ut sit amet mi ipsum. Sed at tincidunt sem. Aliquam commodo consequat purus, et consectetur risus ultricies et. Ut neque enim, aliquam non commodo in, porta et purus. Aenean varius laoreet mauris sed efficitur. Quisque ut sollicitudin nisl, vel feugiat augue. Sed pulvinar ullamcorper faucibus. Sed sed velit sem. Proin sit amet ex at quam pulvinar lobortis eget nec nunc. In venenatis a felis quis lobortis. Cras pellentesque massa vel hendrerit ultricies. Praesent vel metus consectetur, elementum enim a, lobortis tortor. Fusce in diam vitae elit blandit volutpat sed sed risus. Nulla sagittis odio dui, in sollicitudin nulla scelerisque finibus.</p>
+        <p>Mauris molestie leo eu mauris congue mattis. In fringilla tempus consectetur. Etiam non sem pulvinar, placerat enim molestie, interdum mi. Nullam luctus leo sit amet nisl condimentum, at euismod velit sodales. Aliquam varius ipsum vitae purus dictum, nec volutpat nisl condimentum. Donec convallis dapibus odio, sed ullamcorper tellus suscipit eget. Cras sodales venenatis diam, et convallis velit imperdiet eu. Morbi commodo molestie imperdiet. Donec elementum purus quis risus fermentum, at fringilla ante volutpat. Ut hendrerit gravida semper. Nunc id pellentesque augue, in viverra urna.</p>
+        <p>Donec consectetur metus ut leo tempor cursus. Morbi eu libero in lacus sodales lobortis ut id urna. Aenean sit amet mattis velit, non feugiat sapien. Fusce aliquet semper lacus, in feugiat diam interdum ut. Vestibulum blandit sit amet turpis eget blandit. In vulputate, eros vel scelerisque suscipit, quam massa vulputate tellus, vel commodo mauris velit at sem. Sed non neque tellus. Curabitur rutrum, massa sed blandit dignissim, quam quam lobortis libero, a tempus ex sem non velit. Morbi faucibus elit quis libero aliquet accumsan in in mauris. Nullam ac lacinia ipsum. Sed dictum ac lectus sit amet lobortis.</p>
+        <p>Até que um dia o garoto teve outro sonho. Então o sonho acabou.</p>
+    </body>
+    <script>
+        window.onload = function() {
+            document.getElementsByTagName('body')[0].style.backgroundColor = localStorage.getItem('background color');
+            document.getElementsByTagName('body')[0].style.color = localStorage.getItem('text color');
+            document.getElementsByTagName('body')[0].style.fontSize = localStorage.getItem('font size') + 'px';
+            document.getElementsByTagName('body')[0].style.lineHeight = localStorage.getItem('line height');
+            document.getElementsByTagName('body')[0].style.fontFamily = localStorage.getItem('font family');
+        }
+
+        document.getElementById('bg-color').addEventListener('click', changeBgColor);
+        document.getElementById('txt-color').addEventListener('click', changeTxtColor);
+        document.getElementById('font-size').addEventListener('click', changeFontSize);
+        document.getElementById('line-height').addEventListener('click', changeLineHeight);
+        document.getElementById('font').addEventListener('click', changeFont);
+
+        function changeBgColor() {
+            bgColor = document.getElementsByTagName('input')[0].value;
+            localStorage.setItem('background color', bgColor);
+            return document.getElementsByTagName('body')[0].style.backgroundColor = bgColor;
+        }
+
+        function changeTxtColor() {
+            txtColor = document.getElementsByTagName('input')[1].value;
+            localStorage.setItem('text color' ,txtColor);
+            return document.getElementsByTagName('body')[0].style.color = txtColor;
+        }
+
+        function changeFontSize() {
+            ftSize = document.getElementsByTagName('input')[2].value;
+            localStorage.setItem('font size', ftSize);
+            return document.getElementsByTagName('body')[0].style.fontSize = ftSize + 'px';
+        }
+
+        function changeLineHeight() {
+            lnHeight = document.getElementsByTagName('input')[3].value;
+            localStorage.setItem('line height', lnHeight);
+            return document.getElementsByTagName('body')[0].style.lineHeight = lnHeight;
+        }
+
+        function changeFont() {
+            ftFamily = document.getElementsByTagName('input')[4].value;
+            localStorage.setItem('font family', ftFamily);
+            return document.getElementsByTagName('body')[0].style.fontFamily = ftFamily;
+        }
+    </script>
+</html>
