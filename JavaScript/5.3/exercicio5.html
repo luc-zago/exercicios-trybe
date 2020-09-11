@@ -18,7 +18,7 @@
         img.style.left = (parseInt(img.style.left) + 10) + 'px';
     }
     window.setInterval(catWalk, 50);
-*/
+
     img.style.left = '0px';
     function catWalk() {
     let currentLeft = parseInt(img.style.left);
@@ -27,6 +27,26 @@
     img.style.left = '0px';
   }
 }
-window.setInterval(catWalk, 50);
+window.setInterval(catWalk, 50); */
+    
+    let walkForwards = true;
+    function catWalk() {
+    let currentLeft = parseInt(img.style.left);
+  
+    if (walkForwards && (currentLeft > (window.innerWidth - img.width))) {
+        walkForwards = false;
+    }
+    if (!walkForwards && (currentLeft <= 0)) {
+        walkForwards = true;
+    }
+  
+    if (walkForwards) {
+        img.style.left = (currentLeft + 10) + 'px';
+    } else {
+        img.style.left = (currentLeft - 10) + 'px';
+    }
+    }
+    window.setInterval(catWalk, 50);
+ 
  </script>
 </html>
