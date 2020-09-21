@@ -11,8 +11,4 @@ window.onload = function () {
       document.getElementById('user-state').appendChild(listItem);
     }
   }
-  
-  document.getElementById('date').DatePickerX.init();
-  window.DatePickerX.setDefaults();
-
 }
