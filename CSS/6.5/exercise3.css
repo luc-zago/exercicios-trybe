@@ -94,3 +94,27 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 360px) {
+  
+  body {
+    padding: 0;
+  }
+
+  #header {
+    position: fixed;
+  }
+
+  #navigation ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #aside {
+    display: none;
+  }
+
+  img {
+    width: 100vh;
+  }
+}
