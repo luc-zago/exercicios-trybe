@@ -1,0 +1,46 @@
+body {
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 50px 30px;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background-color: blue;
+    font-size: 1rem;
+    margin: 0 25px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  figure {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color: green;
+    font-size: 1.2rem;
+    margin: 0 30px;
+    max-width: 1000px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
