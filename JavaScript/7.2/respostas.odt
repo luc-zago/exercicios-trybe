@@ -1,0 +1,13 @@
+
+Exercício 1
+
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables
+
+var playerNumber = 16;
+var player = testObj[playerNumber];
+
+Exercício 2
+
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/updating-object-properties
+
+myDog.name = "Happy Coder";
