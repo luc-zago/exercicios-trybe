@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <title>Currículo</title>
         <!--link rel="stylesheet" type="text/css" href="style.css">-->
-        <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
         <form action="" method="POST">
@@ -63,12 +62,14 @@
                 <div>
                     <!-- Verificar requisito-->
                     <label for="">Data de início</label>
-                    <input name="date" id="date" type="text" required="required" placeholder="dd/mm/aaaa" maxlength="10">
+                    <input name="date" id="date" type="date" required="required" maxlength="10">
                 </div>
                 <div>
                     <button name="send" value="1" type="submit">Enviar</button>
+                    <button name="reset" value="2" type="reset">Limpar</button>
                 </div>
             </fieldset>
         </form>
     </body>
+    <script type="text/javascript" src="script.js"></script>
 </html>
