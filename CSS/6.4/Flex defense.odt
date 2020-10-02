@@ -1,0 +1,24 @@
+
+Exercício 10
+
+justify-content: space-around;
+order: 1;
+justify-content: space-around;
+order: -1;
+
+Exercício 11
+
+justify-content: space-between;
+align-self: flex-end;
+align-self: flex-end;
+
+Exercício 12
+
+justify-content: space-between;
+align-self: center;
+align-self: center;
+order: 1;
+align-self: center;
+order: 0;
+align-self: flex-end;
+order: 2;
