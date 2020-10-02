@@ -28,9 +28,45 @@ const longestWord = (string) => {
 
 //Exercício 3: criar uma página html com um botão, uma variável clickCount que conta o número de cliques e um campo html que vai atualizando com a quantidade de cliques
 
+/*
 let clickCount = 0;
 
 document.getElementsByTagName('button')[0].addEventListener('click', clickCounter = () => {
   clickCount += 1;
   document.getElementsByTagName('p')[0].innerText = `Cliques: ${clickCount}`
-});
+}); */
+
+//Exercício 4
+//1. Crie uma função que recebe um string como parâmetro e substitui pelo x de uma string determinada
+
+const changeX = (string) => {
+  let preorderedString = 'Tryber x aqui!'
+  const stringToArray = preorderedString.split(' ');
+  for (let index = 0; index < stringToArray.length; index += 1) {
+    if (stringToArray[index] === 'x') {
+      stringToArray[index] = string;
+    }
+  }
+  const result = stringToArray.join(' ');
+  return result;
+};
+
+const returnChangeXForLucas = (changeX('Lucas'));
+
+//2. Crie um array com escopo global contendo cinco das suas principais skills
+
+const skills = ['adaptável', 'comunicativo', 'disciplinado', 'paciente', 'companheiro'];
+
+//3. Crie uma função que vai receber a string retornada da função 1 como parâmetro. Essa função deve retornar um novo string com a primeira frase e a lista de skills em ordem alfabética
+
+const mySkills = (string) => {
+  skills.sort();
+  return `${string} Minhas cinco principais habilidades são:
+  - ${skills[0]};
+  - ${skills[1]};
+  - ${skills[2]};
+  - ${skills[3]};
+  - ${skills[4]};`
+};
+
+console.log(mySkills(returnChangeXForLucas))
