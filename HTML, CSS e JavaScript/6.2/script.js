@@ -79,8 +79,10 @@ window.onload = function () {
         required: 'Preencha o nome da sua cidade',
         maxLength: 'Tamanho máximo de 28 caracteres'
       },
+
       state: 'Escolha o seu Estado',
       radio: 'Selecione uma opção',
+      
       resume: {
         required: 'Preencha o resumo do seu currículo',
         maxLength: 'Tamanho máximo de 1000 caracteres'
