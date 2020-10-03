@@ -56,6 +56,9 @@ new JustValidate('.js-form', {
     state: {
       required: true,
     },
+    radio: {
+      required: true,
+    },
     resume: {
       required: true,
       maxLength: 1000
@@ -77,6 +80,7 @@ new JustValidate('.js-form', {
     adress: 'Preencha o seu endereço',
     city: 'Preencha o nome da sua cidade',
     state: 'Escolha o seu Estado',
+    radio: 'Selecione uma opção',
     resume: 'Preencha o resumo do seu currículo',
     position: 'Preencha o último cargo que você ocupou',
     description: 'Preencha a descrição do seu último cargo',
