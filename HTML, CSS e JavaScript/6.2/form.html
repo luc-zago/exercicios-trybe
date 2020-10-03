@@ -2,72 +2,87 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Currículo</title>
-        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+        <!--link rel="stylesheet" type="text/css" href="style.css">-->
     </head>
     <body>
-        <form action="" method="POST">
-            <fieldset>
+        <form action="#" class="js-form form" method="POST">
+            <fieldset class="form-group">
                 <legend>Dados pessoais</legend>
-                <div>
+                <div class="form-group">
                     <label for="full-name">Nome</label>
-                    <input name="full-name" type="text" required="required" placeholder="Digite seu nome" maxlength="40">
+                    <input name="full-name" class="form-control" type="text" data-validate-field="fullname" placeholder="Digite seu nome">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input name="email" type="text" required="required" placeholder="Digite seu e-mail" maxlength="50">
+                    <input name="email" class="form-control" type="text" data-validate-field="email" placeholder="Digite seu e-mail">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="cpf">CPF</label>
-                    <input name="cpf" type="text" required="required" placeholder="Digite seu CPF" maxlength="11">
+                    <input name="cpf" class="form-control" type="text" data-validate-field="cpf" placeholder="Digite seu CPF">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="adress">Endereço</label>
-                    <input name="adress" type="text" required="required" placeholder="Digite seu endereço" maxlength="200">
+                    <input name="adress" class="form-control" type="text" data-validate-field="adress" placeholder="Digite seu endereço">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="city">Cidade</label>
-                    <input name="city" type="text" required="required" placeholder="Digite a sua cidade" maxlength="28">
+                    <input name="city" class="form-control" type="text" data-validate-field="city" placeholder="Digite a sua cidade">
                 </div>
-                <div>
+                <div class="form-group">
                     <!-- Ver mais detalhadamente sobre combobox-->
-                    <label for="state">Estado</label>
-                    <!--<input name="state" id="combobox-state" type="text" required="required" list="states">
-                    <datalist id="states">
-                    </datalist>-->
-                    <select name="state" id="user-state" required="required">
-                        <option selected="selected" value="">Selecione</option>
-                    </select>
+                    <div class="input-group mb-3">
+                        <!--<input name="state" id="combobox-state" type="text" required="required" list="states">
+                        <datalist id="states">
+                        </datalist>-->
+                        <select name="state" class="custom-select" id="user-state" data-validate-field="state">
+                            <option selected="selected" value="">Selecione</option>
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text" for="state">Estado</label>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <p>Casa ou apartamento?</p>
-                    <label for="house"><input name="type-of-house" id="house" type="radio" value="casa">Casa</label>
-                    <label for="apartment"><input name="type-of-house" id="apartment" type="radio" value="apartamento">Apartamento</label>
+                <div class="form-group">Casa ou apartamento?
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="type-of-house" class="form-check-input" id="house" data-validate-field="radio" value="casa">
+                        <label for="house" class="form-check-label">Casa</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="type-of-house" class="form-check-input" data-validate-field="radio" id="apartment" value="apartamento">
+                        <label for="apartment" class="form-check-label">Apartamento</label>
+                    </div>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="form-group">
                 <legend>Dados do último emprego</legend>
-                <div>
+                <div class="form-group">
                     <label for="resume">Resumo</label></br>
-                    <textarea name="resume" placeholder="Escreva um resumo do seu currículo com até 1000 caracteres" required="required" maxlength="1000" cols="50" rows="20"></textarea>
+                    <textarea name="resume" class="form-control" placeholder="Escreva um resumo do seu currículo com até 1000 caracteres" data-validate-field="resume" cols="50" rows="20"></textarea>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="position">Cargo</label>
-                    <input name="position" type="text" required="required" placeholder="Digite seu cargo" maxlength="40">
+                    <input name="position" class="form-control" type="text" data-validate-field="position" placeholder="Digite seu cargo">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="describe-position">Descrição do cargo</label>
-                    <input name="describe-position" type="text" required="required" placeholder="Descreva seu cargo" maxlength="500">
+                    <input name="describe-position" class="form-control" type="text" data-validate-field="description" placeholder="Descreva seu cargo">
                 </div>
-                <div>
+                <div class="form-group">
                     <!-- Verificar requisito-->
                     <label for="">Data de início</label>
-                    <input name="date" id="datepicker" type="text" required="required" placeholder="dd/mm/aaaa" maxlength="10">
+                    <input name="date" class="form-control" id="date" type="text" data-validate-field="date" placeholder="dd/mm/aaaa">
                 </div>
-                <div>
-                    <button name="send" value="1" type="submit">Enviar</button>
+                <div class="form-group">
+                    <button name="send" class="btn btn-success" value="1" type="submit">Enviar</button>
+                    <button name="reset" class="btn btn-success" value="2" type="reset">Limpar</button>
                 </div>
             </fieldset>
         </form>
     </body>
+    <script src="DatePickerX-master/dist/js/DatePickerX.min.js"></script>
+    <script src="Just-validate-master/dist/js/just-validate.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </html>
