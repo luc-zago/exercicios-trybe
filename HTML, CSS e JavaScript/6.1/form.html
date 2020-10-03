@@ -4,31 +4,30 @@
         <meta charset="UTF-8">
         <title>Currículo</title>
         <!--link rel="stylesheet" type="text/css" href="style.css">-->
-        <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
-        <form action="" method="POST">
+        <form id = "form" action="" method="POST">
             <fieldset>
                 <legend>Dados pessoais</legend>
                 <div>
                     <label for="full-name">Nome</label>
-                    <input name="full-name" type="text" required="required" placeholder="Digite seu nome" maxlength="40">
+                    <input name="full-name" type="text" pattern="[A-zÀ-ÿ ]{1,}" title = "Apenas letras" required="required" placeholder="Digite seu nome" maxlength="40">
                 </div>
                 <div>
                     <label for="email">E-mail</label>
-                    <input name="email" type="text" required="required" placeholder="Digite seu e-mail" maxlength="50">
+                    <input name="email" type="text" pattern="[A-Za-z0-9._-]+@[a-z0-9.-]+.[a-z]" title = "email@email.com" required="required" placeholder="Digite seu e-mail" maxlength="50">
                 </div>
                 <div>
                     <label for="cpf">CPF</label>
-                    <input name="cpf" type="text" required="required" placeholder="Digite seu CPF" maxlength="11">
+                    <input name="cpf" type="text" pattern="[0-9]{1,}" title = "Apenas números" required="required" placeholder="Digite seu CPF" maxlength="11">
                 </div>
                 <div>
                     <label for="adress">Endereço</label>
-                    <input name="adress" type="text" required="required" placeholder="Digite seu endereço" maxlength="200">
+                    <input name="adress" type="text" pattern="[A-zÀ-ÿ0-9´`~^, ]{1,}" title = "Apenas letras e números" required="required" placeholder="Digite seu endereço" maxlength="200">
                 </div>
                 <div>
                     <label for="city">Cidade</label>
-                    <input name="city" type="text" required="required" placeholder="Digite a sua cidade" maxlength="28">
+                    <input name="city" type="text" pattern="[A-zÀ-ÿ ]{1,}" title = "Apenas caracteres" required="required" placeholder="Digite a sua cidade" maxlength="28">
                 </div>
                 <div>
                     <!-- Ver mais detalhadamente sobre combobox-->
@@ -50,25 +49,27 @@
                 <legend>Dados do último emprego</legend>
                 <div>
                     <label for="resume">Resumo</label></br>
-                    <textarea name="resume" placeholder="Escreva um resumo do seu currículo com até 1000 caracteres" required="required" maxlength="1000" cols="50" rows="20"></textarea>
+                    <textarea name="resume" pattern="[A-zÀ-ÿ0-9, ]{1,}" title = "Apenas letras e números" placeholder="Escreva um resumo do seu currículo com até 1000 caracteres" required="required" maxlength="1000" cols="50" rows="20"></textarea>
                 </div>
                 <div>
                     <label for="position">Cargo</label>
-                    <input name="position" type="text" required="required" placeholder="Digite seu cargo" maxlength="40">
+                    <input name="position" type="text" pattern="[A-zÀ-ÿ, ]{1,}" title = "Apenas letras" required="required" placeholder="Digite seu cargo" maxlength="40">
                 </div>
                 <div>
                     <label for="describe-position">Descrição do cargo</label>
-                    <input name="describe-position" type="text" required="required" placeholder="Descreva seu cargo" maxlength="500">
+                    <input name="describe-position" type="text" pattern="[A-zÀ-ÿ0-9, ]{1,}" title = "Apenas letras e números" required="required" placeholder="Descreva seu cargo" maxlength="500">
                 </div>
                 <div>
                     <!-- Verificar requisito-->
                     <label for="">Data de início</label>
-                    <input name="date" id="date" type="text" required="required" placeholder="dd/mm/aaaa" maxlength="10">
+                    <input name="date" id="date" type="date" required="required" maxlength="10">    
                 </div>
                 <div>
                     <button name="send" value="1" type="submit">Enviar</button>
+                    <button name="reset" value="2" type="reset">Limpar</button>
                 </div>
             </fieldset>
         </form>
     </body>
+    <script type="text/javascript" src="script.js"></script>
 </html>

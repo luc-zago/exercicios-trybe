@@ -11,6 +11,7 @@ window.onload = function () {
       document.getElementById('user-state').appendChild(listItem);
     }
   }
+  
   new JustValidate('.js-form', {
 
     rules: {
