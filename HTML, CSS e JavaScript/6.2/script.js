@@ -11,11 +11,95 @@ window.onload = function () {
       document.getElementById('user-state').appendChild(listItem);
     }
   }
-}
+  new JustValidate('.js-form', {
 
+    rules: {
+      fullname: {
+        required: true,
+        maxLength: 40
+      },
+      email: {
+        required: true,
+        maxLength: 50
+      },
+      cpf: {
+        required: true,
+        maxLength: 11
+      },
+      adress: {
+        required: true,
+        maxLength: 200
+      },
+      city: {
+        required: true,
+        maxLength: 28
+      },
+      state: {
+        required: true,
+      },
+      radio: {
+        required: true,
+      },
+      resume: {
+        required: true,
+        maxLength: 1000
+      },
+      position: {
+        required: true,
+        maxLength: 40
+      },
+      description: {
+        required: true,
+        maxLength: 500
+      },
+      date: {
+        required: true,
+      }
+    },
+  
+    messages: {
+      fullname: {
+        required: 'Preencha o seu nome',
+        maxLength: 'Tamanho máximo de 40 caracteres'
+      },
+      email: {
+        required: 'Preencha o seu e-mail',
+        maxLength: 'Tamanho máximo de 50 caracteres'
+      },
+      cpf: {
+        required: 'Preencha o seu C.P.F.',
+        maxLength: 'Tamanho máximo de 11 caracteres'
+      },
+      adress: {
+        required: 'Preencha o seu endereço',
+        maxLength: 'Tamanho máximo de 200 caracteres'
+      },
+      city: {
+        required: 'Preencha o nome da sua cidade',
+        maxLength: 'Tamanho máximo de 28 caracteres'
+      },
+      state: 'Escolha o seu Estado',
+      radio: 'Selecione uma opção',
+      resume: {
+        required: 'Preencha o resumo do seu currículo',
+        maxLength: 'Tamanho máximo de 1000 caracteres'
+      },
+      position: {
+        required: 'Preencha o último cargo que você ocupou',
+        maxLength: 'Tamanho máximo de 40 caracteres'
+      },
+      description: {
+        required: 'Preencha a descrição do seu último cargo',
+        maxLength: 'Tamanho máximo de 500 caracteres'
+      },
+      date: 'Preencha uma data',
+    }
+  });
+}
+/*
 document.getElementsByTagName('button')[0].addEventListener('click', function (evt) {
   evt.preventDefault();
-});
+}); */
 
 document.getElementById('date').DatePickerX.init({
   format:'dd/mm/yyyy',
@@ -29,7 +113,7 @@ document.getElementById('date').DatePickerX.init({
 });
 
 // new window.JustValidate('.js-form');
-
+/*
 new JustValidate('.js-form', {
 
   rules: {

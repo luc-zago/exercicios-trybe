@@ -13,23 +13,23 @@
                 <legend>Dados pessoais</legend>
                 <div class="form-group">
                     <label for="full-name">Nome</label>
-                    <input name="full-name" class="form-control" type="text" date-validate-field="fullname" placeholder="Digite seu nome">
+                    <input name="full-name" class="form-control" type="text" data-validate-field="fullname" placeholder="Digite seu nome">
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input name="email" class="form-control" type="text" date-validate-field="email" placeholder="Digite seu e-mail">
+                    <input name="email" class="form-control" type="text" data-validate-field="email" placeholder="Digite seu e-mail">
                 </div>
                 <div class="form-group">
                     <label for="cpf">CPF</label>
-                    <input name="cpf" class="form-control" type="text" date-validate-field="cpf" placeholder="Digite seu CPF">
+                    <input name="cpf" class="form-control" type="text" data-validate-field="cpf" placeholder="Digite seu CPF">
                 </div>
                 <div class="form-group">
                     <label for="adress">Endereço</label>
-                    <input name="adress" class="form-control" type="text" date-validate-field="adress" placeholder="Digite seu endereço">
+                    <input name="adress" class="form-control" type="text" data-validate-field="adress" placeholder="Digite seu endereço">
                 </div>
                 <div class="form-group">
                     <label for="city">Cidade</label>
-                    <input name="city" class="form-control" type="text" date-validate-field="city" placeholder="Digite a sua cidade">
+                    <input name="city" class="form-control" type="text" data-validate-field="city" placeholder="Digite a sua cidade">
                 </div>
                 <div class="form-group">
                     <!-- Ver mais detalhadamente sobre combobox-->
@@ -37,7 +37,7 @@
                         <!--<input name="state" id="combobox-state" type="text" required="required" list="states">
                         <datalist id="states">
                         </datalist>-->
-                        <select name="state" class="custom-select" id="user-state" date-validate-field="state">
+                        <select name="state" class="custom-select" id="user-state" data-validate-field="state">
                             <option selected="selected" value="">Selecione</option>
                         </select>
                         <div class="input-group-append">
@@ -47,11 +47,11 @@
                 </div>
                 <div class="form-group">Casa ou apartamento?
                     <div class="form-check form-check-inline">
-                        <input type="radio" name="type-of-house" class="form-check-input" id="house" date-validate-field="radio" value="casa">
+                        <input type="radio" name="type-of-house" class="form-check-input" id="house" data-validate-field="radio" value="casa">
                         <label for="house" class="form-check-label">Casa</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" name="type-of-house" class="form-check-input" date-validate-field="radio" id="apartment" value="apartamento">
+                        <input type="radio" name="type-of-house" class="form-check-input" data-validate-field="radio" id="apartment" value="apartamento">
                         <label for="apartment" class="form-check-label">Apartamento</label>
                     </div>
                 </div>
@@ -60,20 +60,20 @@
                 <legend>Dados do último emprego</legend>
                 <div class="form-group">
                     <label for="resume">Resumo</label></br>
-                    <textarea name="resume" class="form-control" placeholder="Escreva um resumo do seu currículo com até 1000 caracteres" date-validate-field="resume" cols="50" rows="20"></textarea>
+                    <textarea name="resume" class="form-control" placeholder="Escreva um resumo do seu currículo com até 1000 caracteres" data-validate-field="resume" cols="50" rows="20"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="position">Cargo</label>
-                    <input name="position" class="form-control" type="text" date-validate-field="position" placeholder="Digite seu cargo">
+                    <input name="position" class="form-control" type="text" data-validate-field="position" placeholder="Digite seu cargo">
                 </div>
                 <div class="form-group">
                     <label for="describe-position">Descrição do cargo</label>
-                    <input name="describe-position" class="form-control" type="text" date-validate-field="description" placeholder="Descreva seu cargo">
+                    <input name="describe-position" class="form-control" type="text" data-validate-field="description" placeholder="Descreva seu cargo">
                 </div>
                 <div class="form-group">
                     <!-- Verificar requisito-->
                     <label for="">Data de início</label>
-                    <input name="date" class="form-control" id="date" type="text" placeholder="dd/mm/aaaa">
+                    <input name="date" class="form-control" id="date" type="text" data-validate-field="date" placeholder="dd/mm/aaaa">
                 </div>
                 <div class="form-group">
                     <button name="send" class="btn btn-success" value="1" type="submit">Enviar</button>
