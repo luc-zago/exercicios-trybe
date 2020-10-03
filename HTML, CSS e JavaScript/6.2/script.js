@@ -13,6 +13,77 @@ window.onload = function () {
   }
 }
 
+document.getElementsByTagName('button')[0].addEventListener('click', function (evt) {
+  evt.preventDefault();
+});
+
+document.getElementById('date').DatePickerX.init({
+  format:'dd/mm/yyyy',
+  mondayFirst: false,
+  weekDayLabels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+  singleMonthLabels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
+'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+  shortMonthLabels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+  todayButtonLabel: 'Hoje',
+  clearButtonLabel: 'Limpar',
+});
+
+// new window.JustValidate('.js-form');
+
+new JustValidate('.js-form', {
+
+  rules: {
+    fullname: {
+      required: true,
+      maxLength: 40
+    },
+    email: {
+      required: true,
+      maxLength: 50
+    },
+    cpf: {
+      required: true,
+      maxLength: 11
+    },
+    adress: {
+      required: true,
+      maxLength: 200
+    },
+    city: {
+      required: true,
+      maxLength: 28
+    },
+    state: {
+      required: true,
+    },
+    resume: {
+      required: true,
+      maxLength: 1000
+    },
+    position: {
+      required: true,
+      maxLength: 40
+    },
+    description: {
+      required: true,
+      maxLength: 500
+    }
+  },
+
+  messages: {
+    fullname: 'Preencha o seu nome',
+    email: 'Preencha o seu e-mail',
+    cpf: 'Preencha o seu C.P.F.',
+    adress: 'Preencha o seu endereço',
+    city: 'Preencha o nome da sua cidade',
+    state: 'Escolha o seu Estado',
+    resume: 'Preencha o resumo do seu currículo',
+    position: 'Preencha o último cargo que você ocupou',
+    description: 'Preencha a descrição do seu último cargo',
+  }
+});
+
+/*
 function verifyDate() {
   const date = document.getElementById('date').value;
   const dateToArray = date.split('');
@@ -39,5 +110,4 @@ function verifyDate() {
   if (year < 0) {
     alert('Ano não pode ser menor que 0')
   }
-}
-
+} */
