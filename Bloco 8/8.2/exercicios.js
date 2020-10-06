@@ -208,6 +208,15 @@ const expected_result4 = [
 
 function oldBooks() {
   // escreva seu código aqui
+  return books.filter((book) => book.releaseYear < 1959).sort((a, b) => {
+    if (a.releaseYear > b.releaseYear) {
+      return 1;
+    }
+    if (a.releaseYear < b.releaseYear) {
+      return -1;
+    }
+    return 0;
+  });
 }
 
 assert.deepEqual(oldBooks(), expected_result4);
