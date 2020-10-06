@@ -239,3 +239,17 @@ function fantasyOrScienceFictionAuthors() {
 }
 
 assert.deepEqual(fantasyOrScienceFictionAuthors(), expected_result5);
+
+// Exercício 6
+const expected_result6 = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu'
+]
+
+function oldBooksNames() {
+  // escreva seu código aqui
+  return books.filter((book) => book.releaseYear < 1959).map((book) => `${book.name}`);
+}
+
+assert.deepEqual(oldBooksNames(), expected_result6);
