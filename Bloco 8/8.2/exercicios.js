@@ -220,3 +220,22 @@ function oldBooks() {
 }
 
 assert.deepEqual(oldBooks(), expected_result4);
+
+// Exercício 5
+const expected_result5 = [
+  'Frank Herbert',
+  'George R. R. Martin',
+  'Isaac Asimov',
+  'J. R. R. Tolkien'
+]
+
+function fantasyOrScienceFictionAuthors() {
+  // escreva seu código aqui
+  return books.filter((book) => {
+    if (book.genre === 'Fantasia' || book.genre === 'Ficção Científica') {
+      return book;
+    };
+  }).map((book) => `${book.author.name}`).sort();
+}
+
+assert.deepEqual(fantasyOrScienceFictionAuthors(), expected_result5);
