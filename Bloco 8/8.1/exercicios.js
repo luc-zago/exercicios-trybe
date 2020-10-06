@@ -204,6 +204,7 @@ const expected_result5 = false;
 
 function authorUnique() {
   // escreva seu código aqui
+  // Resolução 1
   const birthyearsArray = [];
   books.forEach((element) => {
     birthyearsArray.push(element.author.birthYear)
@@ -219,6 +220,7 @@ for (let index = 0; index < birthyearsArray.length; index += 1) {
   }
 };
 return result;
+// Resolução 2
 }
-  
+
 assert.equal(authorUnique(), expected_result5);
