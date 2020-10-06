@@ -259,6 +259,8 @@ const expected_result7 = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
   // escreva seu código aqui
+  // Resolução 1
+  /*
   function name(string) {
     let result = false;
     const nameArray = string.split('');
@@ -267,7 +269,10 @@ function authorWith3DotsOnName() {
     }
     return result;
   };
-  return books.filter((book) => name(book.author.name) === true)[0].name;
+  return books.filter((book) => name(book.author.name) === true)[0].name; */
+  // Resolução 2
+  const author = books.filter((book) => ((book.author.name[1] && book.author.name[4] && book.author.name[7]) === '.'));
+  return author[0].name;
 }
 
 assert.deepEqual(authorWith3DotsOnName(), expected_result7);
