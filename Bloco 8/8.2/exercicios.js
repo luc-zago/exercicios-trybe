@@ -253,3 +253,21 @@ function oldBooksNames() {
 }
 
 assert.deepEqual(oldBooksNames(), expected_result6);
+
+// Exercício 7
+const expected_result7 = 'O Senhor dos Anéis';
+
+function authorWith3DotsOnName() {
+  // escreva seu código aqui
+  function name(string) {
+    let result = false;
+    const nameArray = string.split('');
+    if (nameArray[1] && nameArray[4] && nameArray[7] === '.') {
+      result = true;
+    }
+    return result;
+  };
+  return books.filter((book) => name(book.author.name) === true)[0].name;
+}
+
+assert.deepEqual(authorWith3DotsOnName(), expected_result7);
