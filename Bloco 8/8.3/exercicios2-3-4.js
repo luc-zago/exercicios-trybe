@@ -119,6 +119,41 @@ const expected_result3 = {
   
 function longestNamedBook() {
   // escreva seu código aqui
+  let bookWithBiggerName;
+  const getBigger = (biggestName, book) => {
+    if (biggestName < book.name.length) {
+      biggestName = book.name.length;
+      bookWithBiggerName = book;
+    }
+    return bookWithBiggerName;
+  }
+  return books.reduce(getBigger, 0);
 }
-  
+/*
+const getBigger = (biggestName, book) => {
+  console.log(book.name.length);
+  (biggestName > book.name.length) ? biggestName : book.name.length;
+  return biggestName;
+}
+
+let bookWithBiggerName;
+
+const getBigger3 = (biggestName, book) => {
+    console.log(book.name.length);
+    if (biggestName < book.name.length) {
+      biggestName = book.name.length;
+      bookWithBiggerName = book;
+    }
+    return bookWithBiggerName;
+  }
+
+const getBigger2 = (biggestName, book) => (biggestName > book) ? biggestName : book;
+
+const teste = books.reduce(getBigger3, 0)
+
+const array = [1, 2, 27, 4, 5, 6];
+
+console.log(teste);
+// console.log(array.reduce(getBigger2, 0)); */
+
 assert.deepEqual(longestNamedBook(), expected_result3);
