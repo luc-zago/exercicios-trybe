@@ -42,7 +42,21 @@ const fetchJoke = () => {
       divisionArray.push(number / 5);
       divisionArray.push(number / 10);
     });
-    console.log(divisionArray);
+
+    const secondPromise = new Promise((resolve, reject) => {
+      
+      const sum = divisionArray.reduce((result, number) => result + number);
+      
+      if (sum > 0) {
+        return resolve(sum)
+      }
+
+      reject(sum);
+    })
+
+    .then(sum => console.log(sum))
+    .catch(sum => console.log('Erro'));
+
   })
   .catch(sum => console.log(`É mais de oito mil! Essa promise deve estar quebrada!`));
 
