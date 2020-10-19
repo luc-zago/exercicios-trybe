@@ -14,7 +14,7 @@ const fetchJoke = () => {
       jokeContainer.innerText = data.joke;
     });
 
-  const test = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
 
     const array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     
@@ -33,15 +33,24 @@ const fetchJoke = () => {
     // throw new Error('Soma igual ou maior que 8000');
 
   })
-  .then(sum => `Maravilha! Nosso número foi ${sum}`)
-  .then(msg => console.log(msg))
-  .catch(sum => console.log(`Soma maior ou igual à 8000 ${sum}`));
+
+  .then(sum => {
+    const divisionArray = [];
+    [sum].forEach((number) => {
+      divisionArray.push(number / 2);
+      divisionArray.push(number / 3);
+      divisionArray.push(number / 5);
+      divisionArray.push(number / 10);
+    });
+    console.log(divisionArray);
+  })
+  .catch(sum => console.log(`É mais de oito mil! Essa promise deve estar quebrada!`));
+
 };
 
 window.onload = () => fetchJoke();
 
-/*
-const test = () => {
+ /* const test = () => {
   const array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   
   const newArray = array.map((number) => {
@@ -51,7 +60,19 @@ const test = () => {
 
   const sumNumbers = newArray.reduce((result, number) => result + number);
 
-  return sumNumbers;
+  const testArray = [];
+  [sumNumbers].forEach((number) => {
+    const divisionWith2 = number / 2;
+    testArray.push(divisionWith2);
+    const divisionWith3 = number / 3;
+    testArray.push(divisionWith3);
+    const divisionWith5 = number / 5;
+    testArray.push(divisionWith5);
+    const divisionWith10 = number / 10;
+    testArray.push(divisionWith10);
+  })
+
+  return testArray;
 }
 
 console.log(test()); */
