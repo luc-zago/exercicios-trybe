@@ -13,7 +13,12 @@
 //   buzz
 
 function fizzBuzz(n) {
-
-}
+  for (let counter = 1; counter <= n; counter += 1) {
+    if ((counter % 3 === 0) && (counter % 5 === 0)) console.log('fizzbuzz');
+    if ((counter % 3 === 0) && (counter % 5 !== 0)) console.log('fizz');
+    if ((counter % 3 !== 0) && (counter % 5 === 0)) console.log('buzz');
+    if ((counter % 3 !== 0) && (counter % 5 !== 0)) console.log(counter);
+  };
+};
 
 module.exports = fizzBuzz;
