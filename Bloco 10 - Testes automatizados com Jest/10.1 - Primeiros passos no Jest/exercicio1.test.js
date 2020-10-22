@@ -54,14 +54,17 @@ it('should remove the item from the array', () => {
   expect(myRemoveWithoutCopy([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
 });
 
-const checkIfFunctionMyRemoveWithoutCopyChangeParameterArray = () => {
+ /*const checkIfFunctionMyRemoveWithoutCopyChangeParameterArray = () => {
   const array = [1, 2, 3, 4];
   myRemoveWithoutCopy(array, 3);
   return array;
-}
+} */
 
 it('should not change the parameter array', () => {
-  expect(checkIfFunctionMyRemoveWithoutCopyChangeParameterArray()).toEqual([1, 2, 4]);
+  // expect(checkIfFunctionMyRemoveWithoutCopyChangeParameterArray()).toEqual([1, 2, 4]);
+  const array = [1, 2, 3, 4];
+  myRemoveWithoutCopy(array, 3);
+  expect(array).toEqual([1, 2, 4]);
 });
 
 it("should return 'fizzbuzz' if the number is divisible for 3 and 5", () => {
