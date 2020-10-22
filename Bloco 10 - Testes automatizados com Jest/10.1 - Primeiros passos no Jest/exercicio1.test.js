@@ -31,14 +31,17 @@ it('should remove the item from the array', () => {
   expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
 });
 
-const checkIfFunctionMyRemoveChangeParameterArray = () => {
+/* const checkIfFunctionMyRemoveChangeParameterArray = () => {
   const array = [1, 2, 3, 4];
   myRemove(array, 3);
   return array;
-}
+} */
 
 it('should not change the parameter array', () => {
-  expect(checkIfFunctionMyRemoveChangeParameterArray()).toEqual([1, 2, 3, 4]);
+  // expect(checkIfFunctionMyRemoveChangeParameterArray()).toEqual([1, 2, 3, 4]);
+  const array = [1, 2, 3, 4];
+  myRemove(array, 3);
+  expect(array).toEqual([1, 2, 3, 4]);
 });
 
 it('should not remove the item from the array if the item does not exist in the array', () => {
