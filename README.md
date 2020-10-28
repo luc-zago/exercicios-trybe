@@ -6,7 +6,7 @@ Este repositório é dedicado aos exercícios que serão executados ao longo do 
 
 O curso é dividido em quatro grandes módulos, sendo cada módulo abordado de acordo com a ordem em que estão descritos abaixo, e cada um desses módulos trabalha os seguintes conteúdos:
 
-- Fundamentos do desenvolvimento web;
+- Fundamentos de desenvolvimento web;
     a) Internet;
     b) Unix & Bash;
     c) Git;
@@ -47,7 +47,7 @@ As pastas 'módulos' foram nomeadas seguindo os seguintes critérios:
 
 Exemplo de pasta de módulo:
 
-- Módulo 1 - Fundamentos do desenvolvimento web;
+- Módulo 1 - Fundamentos de desenvolvimento web;
 
 Os mesmos critérios foram seguidos para as pastas 'blocos' e para as pastas 'dias'. Os blocos são numerados de 1 à 39, que são a quantidade total e a sequência de blocos abordados em todo o curso.
 
