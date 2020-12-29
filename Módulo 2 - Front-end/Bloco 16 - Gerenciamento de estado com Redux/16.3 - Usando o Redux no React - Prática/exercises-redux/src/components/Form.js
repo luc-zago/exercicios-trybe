@@ -6,26 +6,22 @@ import { changeState } from '../actions';
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
     this.upperCase = this.upperCase.bind(this);
     this.removeSpecialCharacters = this.removeSpecialCharacters.bind(this);
     this.checkCity = this.checkCity.bind(this);
     this.deleteFirstValue = this.deleteFirstValue.bind(this);
+    this.getFormElements = this.getFormElements.bind(this);
     this.saveCV = this.saveCV.bind(this);
     this.clearAll = this.clearAll.bind(this);
     this.state = {
-      name: '',
-      city: '',
-      adress: '',
-      state: '',
       jobMessage: false,
       saveCV: false,
     };
   }
-
+  /*
   handleChange({ target }) {
     const { name, value } = target;
-    /*
     if (value === 'apartment') {
       return this.setState({
         [value]: target.checked,
@@ -37,14 +33,20 @@ class Form extends Component {
         [value]: target.checked,
         apartment: false,
       });
-    } */
+    }
     this.setState({ [name]: value });
-  }
+    return target;
+  } */
 
   upperCase({ target }) {
     const { name, value } = target;
     const newValue = value.toUpperCase();
-    this.setState({ name: newValue });
+    // this.setState({ name: newValue });
+    target.value = newValue;
+    return {
+      name: name,
+      value: newValue
+    }
   }
 
   removeSpecialCharacters({ target }) {
@@ -55,46 +57,85 @@ class Form extends Component {
     let newValue = value;
     specialCharacters.forEach((character) => {
       if (character === lastCharacter) newValue = value.slice(0, value.length -1);
+      return {
+        name: name,
+        value: newValue
+      }
     })
-    this.setState({ [name]: newValue });
+    // this.setState({ [name]: newValue });
+    target.value = newValue;
+    return {
+      name: name,
+      value: newValue
+    }
   }
 
   checkCity({ target }) {
     const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    const { value } = target;
+    const { name, value } = target;
     let newValue = value;
     numbers.forEach(number => {
       if ((value[0] === number) || (value[1] === number)) newValue = '';
     })
-    this.setState({ city: newValue });
+    // this.setState({ city: newValue });
+    target.value = newValue;
+    return {
+      name: name,
+      value: newValue
+    }
   }
 
   deleteFirstValue({ target }) {
+    const { name, value } = target;
     const firstValue = document.getElementById('select');
     if (firstValue !== null) firstValue.remove();
-    this.handleChange({ target });
+    return {
+      name: name,
+      value: value
+    };
+  }
+
+  getFormElements() {
+    const inputsArray = [].slice.call(document.getElementsByTagName('input'));
+    const textAreaArray = [].slice.call(document.getElementsByTagName('textarea'));
+    const state = [].slice.call(document.getElementsByTagName('select'));
+    const typeOfHouse = inputsArray.splice(5, 2);
+    const formArray = inputsArray.concat(textAreaArray, state);
+    const result = [ typeOfHouse, formArray ];
+    return result;
   }
 
   saveCV() {
-    const { house, apartment } = this.state;
-    const values = Object.values(this.state);
-    const emptyField = values.some((value) => value === '');
-    if ((emptyField === false) && ((house || apartment) === true)) return this.setState({ saveCV: true });
+    const formElements = this.getFormElements();
+    const emptyField = formElements[1].some((element) => element.value === '');
+    const emptyTypeOfHouse = formElements[0].some((element) => element.checked === true);
+    if ((emptyField === false) && (emptyTypeOfHouse === true)) return this.setState({ saveCV: true });
   }
 
   clearAll() {
+    const formElements = this.getFormElements();
+    formElements[1].forEach((element) => {
+      if (element.value !== 'Selecione um Estado') element.value = ''
+    });
+    formElements[0].forEach((element) => element.checked = false);
+    const stateValue = document.getElementById('select');
+    if (stateValue === null) {
+      const select = document.getElementsByTagName('select')[0];
+      const firstValue = document.createElement('option');
+      const secondValue = document.getElementsByTagName('option')[0];
+      firstValue.id = "select";
+      firstValue.innerText = 'Selecione um Estado';
+      select.insertBefore(firstValue, secondValue);
+      select.value = 'Selecione um Estado';
+    }
     this.setState({
-      adress: '',
-      state: '',
-      house: false,
-      apartment: false,
       saveCV: false,
     });
   }
 
   render() {
     const { change } = this.props;
-    const { name, city, adress, state, saveCV } = this.state;
+    const { saveCV } = this.state;
     return (
       <div id="app">
         <div className="header">
@@ -107,8 +148,7 @@ class Form extends Component {
               <input
                 name="name"
                 type="text"
-                value={ name }
-                onChange={ this.upperCase }
+                onChange={ (event) => change(this.upperCase(event)) }
                 placeholder="Digite o seu nome"
                 maxLength="40"
                 required="required"
@@ -141,8 +181,7 @@ class Form extends Component {
               <input
                 name="adress"
                 type="text"
-                value={ adress }
-                onChange = { this.removeSpecialCharacters }
+                onChange = { (event) => change(this.removeSpecialCharacters(event)) }
                 placeholder="Digite o seu endereço"
                 maxLength="200"
                 required="required"
@@ -153,9 +192,8 @@ class Form extends Component {
               <input
                 name="city"
                 type="text"
-                value={ city }
-                onChange={ this.handleChange }
-                onBlur = { this.checkCity }
+                onChange={ (event) => change(event.target) }
+                onBlur = { (event) => change(this.checkCity(event)) }
                 placeholder="Digite o nome de sua cidade"
                 maxLength="28"
                 required="required"
@@ -163,8 +201,8 @@ class Form extends Component {
             </div>
             <div className="state">
               <label htmlFor="state" />
-              <select name="state" onChange={ this.deleteFirstValue }>
-                <option id="select" value={ state }>Selecione um Estado</option>
+              <select name="state" onChange={ (event) => change(this.deleteFirstValue(event)) }>
+                <option id="select">Selecione um Estado</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
