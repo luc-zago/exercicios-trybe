@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-// incluir link para login
-
 class Home extends Component {
   render() {
     return (
