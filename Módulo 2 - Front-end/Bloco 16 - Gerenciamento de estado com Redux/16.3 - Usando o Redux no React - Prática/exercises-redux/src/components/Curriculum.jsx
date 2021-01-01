@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Curriculum extends Component {
   constructor(props) {
@@ -48,9 +49,9 @@ class Curriculum extends Component {
   }
 
   render() {
-    const { name, email, cpf, adress, city, state, house, cvResume, job, jobDescription } = this.props.data;
+    const { name, email, cpf, adress, city, state, typeOfHouse, cvResume, job, jobDescription } = this.props.form;
     const stateName = this.getStateName(state);
-    const typeOfHouse = this.getTypeOfHouse(house);
+    const house = this.getTypeOfHouse(typeOfHouse);
 
     return (
       <div className="consolidated-cv">
@@ -60,7 +61,7 @@ class Curriculum extends Component {
         <p>Endereço: { adress }</p>
         <p>Cidade: { city }</p>
         <p>Estado: { stateName }</p>
-        <p>{ typeOfHouse }</p>
+        <p>{ house }</p>
         <p>Resumo do currículo: { cvResume }</p>
         <p>Cargo: { job }</p>
         <p>Descrição do cargo: { jobDescription }</p>
@@ -69,10 +70,10 @@ class Curriculum extends Component {
   }
 }
 
-/*
-const mapStateToProps = state => ({
-  list: state.formReducer});
+const mapStateToProps = (state) => ({
+  form: state.formReducer,
+});
 
-export default connect(mapStateToProps)(List); */
+export default connect(mapStateToProps)(Curriculum);
 
-export default Curriculum;
+// export default Curriculum;

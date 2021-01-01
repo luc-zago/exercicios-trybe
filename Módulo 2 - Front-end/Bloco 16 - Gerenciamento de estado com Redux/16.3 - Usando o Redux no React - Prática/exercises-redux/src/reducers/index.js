@@ -1,4 +1,4 @@
-const INITIAL_STATE = [{
+const INITIAL_STATE = {
   name: '',
   email: '',
   cpf: '',
@@ -8,16 +8,17 @@ const INITIAL_STATE = [{
   typeOfHouse: '',
   cvResume: '',
   job: '',
-  jobMessage: false,
   jobDescription: '',
-  saveCV: false,
-}]
+}
 
 function formReducer(state = INITIAL_STATE, action) {
   const { name, value, type } = action;
   switch (type) {
     case 'CHANGE_STATE':
-      return [...state, state[0][`${name}`] = value];
+      return {
+        ...state,
+        [name]: value,
+      };
     default:
       return state;
   }
